@@ -1,0 +1,15 @@
+ body {
+            background-color: #f0f2f5;
+        }
+        main {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+        }
+        /* Estilo para o cursor de ponteiro nos botões de deletar */
+        .btn-delete {
+            cursor: pointer;
+        }

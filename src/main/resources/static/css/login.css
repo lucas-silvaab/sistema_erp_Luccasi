@@ -1,0 +1,33 @@
+       body {
+            background-color: #f0f2f5;
+        }
+        
+        /* Ajustes para alinhar o conteúdo verticalmente e dar espaço */
+        .container-login {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo para o texto à esquerda */
+        .texto-inspiracao h1 {
+            font-size: 3.5rem; /* Fonte maior para o título */
+            font-weight: 700;
+            color: #1877f2; /* Azul primário - Ajustei a cor para um azul mais padrão */
+        }
+
+        .texto-inspiracao p {
+            font-size: 1.5rem;
+        }
+
+        /* Estilo para o botão "Criar nova conta" - ESTE ESTILO PODE SER REMOVIDO AGORA */
+        .btn-criar-conta {
+            background-color: #42b72a; /* Verde */
+            border-color: #42b72a;
+        }
+
+        .btn-criar-conta:hover {
+            background-color: #36a420;
+            border-color: #36a420;
+        }
+        
