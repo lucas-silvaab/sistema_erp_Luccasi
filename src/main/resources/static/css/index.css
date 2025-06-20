@@ -1,15 +1,72 @@
- body {
-            background-color: #f0f2f5;
-        }
-        main {
-            padding-top: 80px;
-            padding-bottom: 60px;
-        }
-        .footer {
-            background-color: #343a40;
-            color: white;
-        }
-        /* Estilo para o cursor de ponteiro nos botões de deletar */
-        .btn-delete {
-            cursor: pointer;
-        }
+/* Estilo geral do corpo para evitar a barra de rolagem horizontal */
+body {
+    overflow-x: hidden;
+}
+
+/* ================== Estilos da Sidebar ================== */
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    z-index: 1030; /* Fica acima da maioria dos elementos */
+    transition: width 0.3s ease; /* Animação suave na largura */
+}
+
+/* Estilos do conteúdo principal */
+#main-content {
+    transition: margin-left 0.3s ease; /* Animação suave na margem */
+    padding-top: 1.5rem; /* Espaço para não colar no topo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Faz o main ocupar o espaço disponível, empurrando o footer para baixo */
+}
+
+/* ----------------- Estado Expandido (Padrão) ----------------- */
+
+body:not(.collapsed) #sidebar {
+    width: 280px; /* Largura do menu expandido */
+}
+
+body:not(.collapsed) #main-content {
+    margin-left: 280px; /* Margem para o conteúdo principal não ficar atrás do menu */
+}
+
+/* ----------------- Estado Recolhido (Collapsed) ----------------- */
+
+/* Quando o body tiver a classe 'collapsed' */
+body.collapsed #sidebar {
+    width: 80px; /* Largura do menu recolhido */
+}
+
+body.collapsed #main-content {
+    margin-left: 80px; /* Margem ajustada para o menu recolhido */
+}
+
+/* Esconde o texto dos links e outros textos quando recolhido */
+body.collapsed .sidebar-text {
+    display: none;
+}
+
+/* Centraliza os ícones quando o menu está recolhido */
+body.collapsed .nav-link,
+body.collapsed .dropdown-toggle {
+    text-align: center;
+}
+
+/* Remove a margem do ícone quando o texto some */
+body.collapsed .nav-link .bi,
+body.collapsed .dropdown-toggle .bi {
+    margin-right: 0 !important;
+    font-size: 1.5rem; /* Aumenta um pouco o ícone para melhor visualização */
+}
+
+/* Ajuste fino para o alinhamento do ícone de usuário quando recolhido */
+body.collapsed #dropdownUser {
+    justify-content: center;
+}

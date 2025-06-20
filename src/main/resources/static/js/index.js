@@ -1,5 +1,6 @@
 
-        async function carregarInfoUsuario() {
+       
+       async function carregarInfoUsuario() {
     const welcomeElement = document.getElementById('welcome-message');
     try {
         const response = await fetch('/usuario/info');
@@ -77,6 +78,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             carregarUsuarios();
             carregarInfoUsuario();
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+    
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', function () {
+            document.body.classList.toggle('collapsed');
+        });
+    }
 
             const tabelaCorpo = document.getElementById('tabela-usuarios-corpo');
             const modalEdicaoElement = document.getElementById('modalEdicao');
